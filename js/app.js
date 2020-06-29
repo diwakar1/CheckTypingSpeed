@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
 const originText = document.querySelector("#origin-text p").innerHTML;
@@ -8,7 +9,7 @@ var timer = [0,0,0,0];
 var interval;
 var timerRunning = false;
 
-// Add leading zero to numbers 9 or below (purely for aesthetics):
+// Add leading zero to numbers 9 or below :
 function leadingZero(time) {
     if (time <= 9) {
         time = "0" + time;
@@ -48,32 +49,32 @@ function spellCheck() {
 
 }
 //unfinished work for making wrong typed letter only to change color.
-function findUnevenLetters(textEntered,originTextMatch){
-   var textEnteredletter = textEntered.split('');
-   var originTextMatchLetter = originTextMatch.split('');
+// function findUnevenLetters(textEntered,originTextMatch){
+//    var textEnteredletter = textEntered.split('');
+//    var originTextMatchLetter = originTextMatch.split('');
 
-   for(var i = 0 ;i < originTextMatchLetter.length;i++){
-       var unevenTextMatch = originTextMatchLetter[i];
-       var unevenTextEntered = textEnteredletter[i];
-       if (unevenTextEntered !== unevenTextMatch){
-           console.log(unevenTextEntered);
-           //var reges = /?<name>unevenTextEntered/
-            textEntered.replace(
-             unevenTextEntered, 
-            ' <span class="selected">' + unevenTextEntered + '</span> ');
-       }
-   }
+//    for(var i = 0 ;i < originTextMatchLetter.length;i++){
+//        var unevenTextMatch = originTextMatchLetter[i];
+//        var unevenTextEntered = textEnteredletter[i];
+//        if (unevenTextEntered !== unevenTextMatch){
+//            console.log(unevenTextEntered);
+//            //var reges = /?<name>unevenTextEntered/
+//             textEntered.replace(
+//              unevenTextEntered, 
+//             ' <span class="selected">' + unevenTextEntered + '</span> ');
+//        }
+//    }
 
    
-   
 
-}
+
+// }
 
 
 // Start the timer:
 function start() {
     let textEnterdLength = testArea.value.length;
-    if (textEnterdLength === 0 && !timerRunning===true) {
+    if (textEnterdLength === 0 && !timerRunning) {
         timerRunning = true;
         interval = setInterval(runTimer, 10);
     }
